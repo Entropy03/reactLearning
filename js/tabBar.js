@@ -1,10 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { render } from 'react-dom';
-import { Router, Link, Route ,browserHistory} from 'react-router';
 
 import { TabBar } from 'antd-mobile';
-
 const TabBarPage = React.createClass({
   getInitialState() {
     return {
@@ -47,6 +43,7 @@ const TabBarPage = React.createClass({
           selectedIcon={{ uri: '' }}
           title="商家"
           key="商家"
+          badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
           selected={this.state.selectedTab === 'redTab'}
           onPress={() => {
             this.setState({
@@ -60,10 +57,8 @@ const TabBarPage = React.createClass({
         <TabBar.Item
           icon={{ uri: '' }}
           selectedIcon={{ uri: '' }}
-          title="订单"
-          key="订单"
-          badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
-
+          title="朋友"
+          key="朋友"
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => {
             this.setState({
@@ -72,7 +67,7 @@ const TabBarPage = React.createClass({
             });
           }}
         >
-          {this.renderContent('订单 Tab', this.state.presses)}
+          {this.renderContent('朋友 Tab', this.state.presses)}
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: '' }}
@@ -93,10 +88,4 @@ const TabBarPage = React.createClass({
   },
 });
 
-
-render(
-  ( 
-     
-       <TabBarPage />
-   ), document.getElementById('content')
-  );
+export default TabBarPage;
