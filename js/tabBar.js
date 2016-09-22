@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { TabBar } from 'antd-mobile';
+import GoodsList from './goodsList.js';
+import CommpanyList from './commpanyList.js';
+
 const TabBarPage = React.createClass({
   getInitialState() {
     return {
@@ -36,7 +39,7 @@ const TabBarPage = React.createClass({
             });
           }}
         >
-          {this.renderContent('活动 Tab')}
+        {<GoodsList />}
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: '' }}
@@ -52,13 +55,13 @@ const TabBarPage = React.createClass({
             });
           }}
         >
-          {this.renderContent('商家 Tab', this.state.notifCount)}
+          {<CommpanyList/>}
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: '' }}
           selectedIcon={{ uri: '' }}
-          title="朋友"
-          key="朋友"
+          title="订单"
+          key="订单"
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => {
             this.setState({
@@ -67,7 +70,7 @@ const TabBarPage = React.createClass({
             });
           }}
         >
-          {this.renderContent('朋友 Tab', this.state.presses)}
+          {this.renderContent('订单 Tab', this.state.presses)}
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: '' }}
