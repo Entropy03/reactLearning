@@ -3,7 +3,8 @@ import React from 'react';
 import { TabBar } from 'antd-mobile';
 import GoodsList from './goodsList.js';
 import CommpanyList from './commpanyList.js';
-
+import BasicInput from './my.js';
+import OrderTab from './orderTab.js';
 const TabBarPage = React.createClass({
   getInitialState() {
     return {
@@ -70,7 +71,7 @@ const TabBarPage = React.createClass({
             });
           }}
         >
-          {this.renderContent('订单 Tab', this.state.presses)}
+          {<OrderTab/>}
         </TabBar.Item>
         <TabBar.Item
           icon={{ uri: '' }}
@@ -84,7 +85,7 @@ const TabBarPage = React.createClass({
             });
           }}
         >
-          {this.renderContent('我的 Tab', this.state.presses)}
+          {<BasicInput/>}
         </TabBar.Item>
       </TabBar>
     );

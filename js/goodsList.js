@@ -124,7 +124,8 @@ const GoodsList = React.createClass({
         <Tabs defaultActiveKey="1" onChange={callback}>
           <TabPane tab="商品" key="1">
             <div style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', height: 100,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', 
+
             }}>
                <div style={{ margin: '0 auto', width: '96%' }}>
       <ListView
@@ -145,10 +146,9 @@ const GoodsList = React.createClass({
         onEndReached={this.onEndReached}
         onEndReachedThreshold={10}
         style={{
-          height: document.body.clientHeight * 3 / 4,
-
+          height: 700,
           overflow: 'auto',
-           border: '1px solid #ddd',
+          border: '1px solid #ddd',
           margin: '10px 0',
         }}
       />
@@ -159,7 +159,7 @@ const GoodsList = React.createClass({
             <div style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center', height: 100,
             }}>
-               选项卡二内容
+              正在开发...
             </div>
           </TabPane>
         
